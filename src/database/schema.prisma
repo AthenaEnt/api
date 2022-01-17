@@ -1,0 +1,317 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "generated/client"
+}
+
+model Verification {
+  id              String   @id @default(cuid()) @db.VarChar(100)
+  type            String
+  otpCode         String
+  email           String?
+  tel             String?
+  context         String
+  pwdRecoverKey   String?
+  hasBeenVerified Boolean  @default(false)
+  expireAt        DateTime
+}
+
+model Category {
+  id            String             @id @default(cuid()) @db.VarChar(100)
+  title         String
+  slug          String             @db.VarChar(255)
+  description   String?            @db.Text
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
+  parentId      String?            @db.VarChar(100)
+  parent        Category?          @relation("CategoryToCategory", fields: [parentId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  iconImageId   String?             @db.VarChar(100)
+  bannerImageId String?             @db.VarChar(100)
+  iconImage     Media?              @relation("CategoryIconImageMedia", fields: [iconImageId], references: [id], onDelete: SetNull)
+  bannerImage   Media?              @relation("CategoryBannerImageMedia", fields: [bannerImageId], references: [id], onDelete: SetNull)
+  marques       Marque[]
+  products      Product[]
+  children      Category[]         @relation("CategoryToCategory")
+  attributes    ProductAttribute[]
+}
+
+model Marque {
+  id         String    @id @default(cuid()) @db.VarChar(100)
+  imageId    String?    @db.VarChar(100)
+  image      Media?     @relation(fields: [imageId], references: [id], onDelete: SetNull)
+  name       String
+  categoryId String    @db.VarChar(100)
+  category   Category[]
+  products   Product[]
+}
+
+model Discount {
+  id               String    @id @default(cuid()) @db.VarChar(100)
+  name             String
+  bannerImageId    String?    @db.VarChar(100)
+  bannerImage      Media?     @relation(fields: [bannerImageId], references: [id], onDelete: SetNull)
+  discountType     String
+  discountNature   String
+  discountCode     String
+  discount         Int
+  startAt          DateTime
+  endAt            DateTime
+  inCartProductMin Int?
+  inCartProductMax Int?
+  commandAmountMin Int?
+  commandAmountMax Int?
+  description      String?   @db.Text
+  command          Command[]
+  pubs             Pub[]
+  product Product[]
+}
+
+model PriceRule {
+  id                  String               @id @default(cuid()) @db.VarChar(100)
+  minPrice            Int
+  maxPrice            Int?
+  amountPercent       Int
+  commandUnitProducts CommandUnitProduct[]
+}
+
+model Pub {
+  id            String    @id @default(cuid()) @db.VarChar(100)
+  name          String
+  bannerImageId String?    @db.VarChar(100)
+  bannerImage   Media?     @relation(fields: [bannerImageId], references: [id], onDelete: SetNull)
+  link          String?
+  description   String?   @db.Text
+  startAt       DateTime
+  endAt         DateTime
+  forDiscountId String?   @db.VarChar(100)
+  forDiscount   Discount? @relation(fields: [forDiscountId], references: [id])
+}
+
+model ShippingZone {
+  id                String    @id @default(cuid()) @db.VarChar(100)
+  townName          String
+  townCode          String
+  baseShippingPrice Int
+  userShippingAdress UserShippingAdress[]
+  products          Product[]
+}
+
+model ShippingRule {
+  id          String @id @default(cuid()) @db.VarChar(100)
+  ruleName    String
+  rule        Json
+  description String @db.Text
+}
+
+model GeneralMeta {
+  id    String @id @default(cuid()) @db.VarChar(100)
+  name  String
+  key   String
+  value Json
+}
+
+model ProductAttributeMeta {
+  id          String           @id @default(cuid()) @db.VarChar(100)
+  attributeId String           @db.VarChar(100)
+  attribute   ProductAttribute @relation(fields: [attributeId], references: [id], onDelete: Cascade)
+  name        String
+  value       Json
+  products    Product[]
+}
+
+model ProductAttribute {
+  id               String                 @id @default(cuid()) @db.VarChar(100)
+  name             String
+  type             String                 @db.VarChar(10)
+  description      String?                @db.Text
+  global           Boolean                @default(false)
+  metas            ProductAttributeMeta[]
+  categoryId       String?                @default(cuid()) @db.VarChar(100)
+  category         Category?              @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  onlyForProductId String?                @db.VarChar(100)
+  onlyForProduct   Product?               @relation(fields: [onlyForProductId], references: [id], onDelete: Cascade)
+}
+
+model Tag {
+  id       String    @id @default(cuid()) @db.VarChar(100)
+  name     String
+  slug     String
+  products Product[]
+}
+
+model CommandUnit {
+  id                  String               @id @default(cuid()) @db.VarChar(100)
+  title               String
+  shortCode           String
+  commandUnitProducts CommandUnitProduct[]
+}
+
+model CommandUnitProduct {
+  id              String           @id @default(cuid()) @db.VarChar(100)
+  commandUnitId   String           @db.VarChar(100)
+  commandUnit     CommandUnit      @relation(fields: [commandUnitId], references: [id], onDelete: Cascade)
+  productId       String           @db.VarChar(100)
+  product         Product?         @relation(fields: [productId], references: [id], onDelete: Cascade)
+  isDefault       Boolean          @default(false)
+  unitPrice       Int
+  priceRuleId     String           @db.VarChar(100)
+  priceRule       PriceRule        @relation(fields: [priceRuleId], references: [id], onDelete: Cascade)
+  commandProducts CommandProduct[]
+}
+
+model Media {
+  id                     String               @id @default(cuid()) @db.VarChar(100)
+  filename               String
+  fileType               String
+  path                   String
+  fileDuration Float?
+  source String @default("server")
+  products               Product[]
+  iconImagesCategories   Category[]           @relation("CategoryIconImageMedia")
+  bannerImagesCategories Category[]           @relation("CategoryBannerImageMedia")
+  marque                 Marque[]
+  pubs                   Pub[]
+  userShippingAdresses   UserShippingAdress[]
+  discounts              Discount[]
+  receiptMedias Receipt[]
+  userId                 String?              @db.VarChar(100)@unique
+  forUser                User?                @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+//model ProdutGroup{}
+model Product {
+
+  id                  String                 @id @default(cuid()) @db.VarChar(100)
+  name                String
+  slug                String
+  description         String?                @db.Text
+  shortDescription    String?
+  type                String
+  productWeight Int?
+  isPublished         Boolean                @default(false)
+  createdAt           DateTime               @default(now())
+  updatedAt           DateTime               @updatedAt
+  sku                 String?
+  marqueId            String?                @db.VarChar(100)
+  marque              Marque?                @relation(fields: [marqueId], references: [id], onDelete: SetNull)
+  variantParentId     String?                @db.VarChar(100)
+  variantParent       Product?               @relation("ProductToProduct", fields: [variantParentId], references: [id], onDelete: Cascade)
+  showProduct         Boolean                @default(true)
+  hasUserDeleted      Boolean                @default(false)
+  productAttributes   ProductAttribute[]
+  variationMetas      ProductAttributeMeta[]
+  variations          Product[]              @relation("ProductToProduct")
+  categories          Category[]
+  shippingZones       ShippingZone[]
+  tags                Tag[]
+  medias              Media[]
+  commandUnitProducts CommandUnitProduct[]
+  commandProducts     CommandProduct[]
+  discounts Discount[]
+}
+
+model Notification {
+  id               String               @id @default(cuid()) @db.VarChar(100)
+  content          String @db.VarChar(255)
+  title            String @db.VarChar(255)
+  createdAt         DateTime              @default(now())
+  context String
+  priority Int @default(0)
+  canLockScreen Boolean @default(false)
+  theme String @default("")
+  commandId String? @db.VarChar(255)
+  hasUserRead Boolean @default(false)
+  command Command? @relation(fields: [commandId], references: [id], onDelete: Cascade)
+  userId String? @db.VarChar(255)
+  user User? @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id               String               @id @default(cuid()) @db.VarChar(100)
+  firstName        String
+  lastName         String
+  passwordHash     String
+  email            String
+  phone            String
+  profileImage     Media?
+  accoundActivated Boolean              @default(false)
+  role             String
+  currentRole      String
+  commands         Command[]
+  shippingAdress   UserShippingAdress[]
+  notifications Notification[]
+}
+
+model UserShippingAdress {
+  id                String    @id @default(cuid()) @db.VarChar(100)
+  shippingZoneId String @db.VarChar(100)
+  fullName String
+  phone String
+  alternatePhone String
+  adressType String
+  shippingZone ShippingZone @relation(fields:[shippingZoneId], references:[id], onDelete:Cascade)
+  quatier           String
+  hasUserDeleted    Boolean   @default(false)
+  additionalDetails String?
+  audioFileId         String?    @db.VarChar(100)
+  audioFile  Media? @relation(fields: [audioFileId], references: [id], onDelete: Cascade)
+  forUserId         String    @db.VarChar(100)
+  forUser           User      @relation(fields: [forUserId], references: [id], onDelete: Cascade)
+  commands          Command[]
+}
+
+model Command {
+  id                String              @id @default(cuid()) @db.VarChar(100)
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  totalPrice        Int
+  orderId           Int
+  archived          Boolean? @default(false)
+  delivered         Boolean             @default(false)
+  status            String              @default("waiting_payment")
+  orderedById       String              @db.VarChar(100)
+  hasUserCanceled   Boolean             @default(false)
+  hasUserDeleted    Boolean             @default(false)
+  orderedBy         User                @relation(fields: [orderedById], references: [id], onDelete: Cascade)
+  shippingAdressId  String?             @db.VarChar(100)
+  shippingAdress    UserShippingAdress? @relation(fields: [shippingAdressId], references: [id], onDelete: SetNull)
+  receiptId         String              @db.VarChar(100)@unique
+  receipt           Receipt             @relation(fields: [receiptId], references: [id], onDelete: Cascade)
+  commandProducts   CommandProduct[]
+  notifications Notification[]
+  appliedDiscountId String?             @db.VarChar(100)
+  appliedDiscount   Discount?           @relation(fields: [appliedDiscountId], references: [id], onDelete: SetNull)
+}
+
+model CommandProduct {
+  id                         String              @id @default(cuid()) @db.VarChar(100)
+  productId                  String              @db.VarChar(100)
+  product                    Product             @relation(fields: [productId], references: [id], onDelete: Cascade)
+  hasUserDeleted             Boolean             @default(false)
+  commandUnitProductId       String              @db.VarChar(100)
+  commandUnitProduct         CommandUnitProduct? @relation(fields: [commandUnitProductId], references: [id], onDelete: Cascade)
+  quantite                   Int
+  commandId                  String              @db.VarChar(100)
+  command                    Command             @relation(fields: [commandId], references: [id], onDelete: Cascade)
+  hasCustomerConfirmShipping Boolean             @default(false)
+  hasAgentConfirmShipping    Boolean             @default(false)
+}
+
+model Receipt {
+  id                String    @id @default(cuid()) @db.VarChar(100)
+  amount            Int
+  createdAt         DateTime  @default(now())
+  hasUserDeleted    Boolean   @default(false)
+  paidAt            DateTime?
+  isPaid            Boolean   @default(false)
+  outPaymentId      String?
+  outPaymentDetails Json?
+  receiptMetas      Json
+  receiptMediaId    String? @db.VarChar(100)
+  receiptMedia      Media? @relation(fields: [receiptMediaId], references: [id], onDelete: Cascade)
+  command           Command?
+}

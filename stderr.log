@@ -1,0 +1,249 @@
+(node:303411) UnhandledPromiseRejectionWarning: Error: Unable to load Node-API Library from /home/dantexlx/tokpas/dist/database/generated/client/libquery_engine-debian-openssl-1.1.x.so.node, Library may be corrupt
+    at Object.loadEngine (/home/dantexlx/tokpas/dist/database/generated/client/runtime/index.js:36140:21)
+    at async Object.instantiateLibrary (/home/dantexlx/tokpas/dist/database/generated/client/runtime/index.js:36095:5)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:303411) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:303411) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:333405) UnhandledPromiseRejectionWarning: Error: Unable to load Node-API Library from /home/dantexlx/tokpas/dist/database/generated/client/libquery_engine-debian-openssl-1.1.x.so.node, Library may be corrupt
+    at Object.loadEngine (/home/dantexlx/tokpas/dist/database/generated/client/runtime/index.js:36140:21)
+    at async Object.instantiateLibrary (/home/dantexlx/tokpas/dist/database/generated/client/runtime/index.js:36095:5)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:333405) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:333405) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+/home/dantexlx/tokpas/src/main.ts:1
+import "reflect-metadata"
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (internal/modules/cjs/loader.js:1001:16)
+    at Module._compile (internal/modules/cjs/loader.js:1049:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19)
+    at require (internal/modules/cjs/helpers.js:93:18)
+    at startApplication (/usr/local/lsws/fcgi-bin/lsnode.js:48:15)
+    at Object.<anonymous> (/usr/local/lsws/fcgi-bin/lsnode.js:16:1)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+/home/dantexlx/tokpas/src/main.ts:1
+import "reflect-metadata"
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (internal/modules/cjs/loader.js:1001:16)
+    at Module._compile (internal/modules/cjs/loader.js:1049:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19)
+    at require (internal/modules/cjs/helpers.js:93:18)
+    at startApplication (/usr/local/lsws/fcgi-bin/lsnode.js:48:15)
+    at Object.<anonymous> (/usr/local/lsws/fcgi-bin/lsnode.js:16:1)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+/home/dantexlx/tokpas/src/main.ts:1
+import "reflect-metadata"
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (internal/modules/cjs/loader.js:1001:16)
+    at Module._compile (internal/modules/cjs/loader.js:1049:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19)
+    at require (internal/modules/cjs/helpers.js:93:18)
+    at startApplication (/usr/local/lsws/fcgi-bin/lsnode.js:48:15)
+    at Object.<anonymous> (/usr/local/lsws/fcgi-bin/lsnode.js:16:1)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+/home/dantexlx/tokpas/src/main.ts:1
+import "reflect-metadata"
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (internal/modules/cjs/loader.js:1001:16)
+    at Module._compile (internal/modules/cjs/loader.js:1049:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19)
+    at require (internal/modules/cjs/helpers.js:93:18)
+    at startApplication (/usr/local/lsws/fcgi-bin/lsnode.js:48:15)
+    at Object.<anonymous> (/usr/local/lsws/fcgi-bin/lsnode.js:16:1)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+/home/dantexlx/tokpas/src/main.ts:1
+import "reflect-metadata"
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (internal/modules/cjs/loader.js:1001:16)
+    at Module._compile (internal/modules/cjs/loader.js:1049:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19)
+    at require (internal/modules/cjs/helpers.js:93:18)
+    at startApplication (/usr/local/lsws/fcgi-bin/lsnode.js:48:15)
+    at Object.<anonymous> (/usr/local/lsws/fcgi-bin/lsnode.js:16:1)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+/home/dantexlx/tokpas/src/main.ts:1
+import "reflect-metadata"
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (internal/modules/cjs/loader.js:1001:16)
+    at Module._compile (internal/modules/cjs/loader.js:1049:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19)
+    at require (internal/modules/cjs/helpers.js:93:18)
+    at startApplication (/usr/local/lsws/fcgi-bin/lsnode.js:48:15)
+    at Object.<anonymous> (/usr/local/lsws/fcgi-bin/lsnode.js:16:1)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+/home/dantexlx/tokpas/src/main.ts:1
+import "reflect-metadata"
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (internal/modules/cjs/loader.js:1001:16)
+    at Module._compile (internal/modules/cjs/loader.js:1049:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19)
+    at require (internal/modules/cjs/helpers.js:93:18)
+    at startApplication (/usr/local/lsws/fcgi-bin/lsnode.js:48:15)
+    at Object.<anonymous> (/usr/local/lsws/fcgi-bin/lsnode.js:16:1)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+/home/dantexlx/tokpas/src/main.ts:1
+import "reflect-metadata"
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (internal/modules/cjs/loader.js:1001:16)
+    at Module._compile (internal/modules/cjs/loader.js:1049:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19)
+    at require (internal/modules/cjs/helpers.js:93:18)
+    at startApplication (/usr/local/lsws/fcgi-bin/lsnode.js:48:15)
+    at Object.<anonymous> (/usr/local/lsws/fcgi-bin/lsnode.js:16:1)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+/home/dantexlx/tokpas/src/main.ts:1
+import "reflect-metadata"
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (internal/modules/cjs/loader.js:1001:16)
+    at Module._compile (internal/modules/cjs/loader.js:1049:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19)
+    at require (internal/modules/cjs/helpers.js:93:18)
+    at startApplication (/usr/local/lsws/fcgi-bin/lsnode.js:48:15)
+    at Object.<anonymous> (/usr/local/lsws/fcgi-bin/lsnode.js:16:1)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+internal/modules/cjs/loader.js:905
+  throw err;
+  ^
+
+Error: Cannot find module 'reflect-metadata'
+Require stack:
+- /home/dantexlx/tokpas/dist/main.js
+- /usr/local/lsws/fcgi-bin/lsnode.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:902:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:746:27)
+    at Module.require (internal/modules/cjs/loader.js:974:19)
+    at require (internal/modules/cjs/helpers.js:93:18)
+    at Object.<anonymous> (/home/dantexlx/tokpas/dist/main.js:6:1)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/dantexlx/tokpas/dist/main.js',
+    '/usr/local/lsws/fcgi-bin/lsnode.js'
+  ]
+}
+internal/modules/cjs/loader.js:905
+  throw err;
+  ^
+
+Error: Cannot find module 'reflect-metadata'
+Require stack:
+- /home/dantexlx/tokpas/dist/main.js
+- /usr/local/lsws/fcgi-bin/lsnode.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:902:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:746:27)
+    at Module.require (internal/modules/cjs/loader.js:974:19)
+    at require (internal/modules/cjs/helpers.js:93:18)
+    at Object.<anonymous> (/home/dantexlx/tokpas/dist/main.js:6:1)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/dantexlx/tokpas/dist/main.js',
+    '/usr/local/lsws/fcgi-bin/lsnode.js'
+  ]
+}
+(node:469722) UnhandledPromiseRejectionWarning: Error: Unable to load Node-API Library from /home/dantexlx/tokpas/dist/database/generated/client/libquery_engine-debian-openssl-1.1.x.so.node, Library may be corrupt
+    at Object.loadEngine (/home/dantexlx/tokpas/dist/database/generated/client/runtime/index.js:36140:21)
+    at async Object.instantiateLibrary (/home/dantexlx/tokpas/dist/database/generated/client/runtime/index.js:36095:5)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:469722) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:469722) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:471417) UnhandledPromiseRejectionWarning: Error: Unable to load Node-API Library from /home/dantexlx/tokpas/dist/database/generated/client/libquery_engine-debian-openssl-1.1.x.so.node, Library may be corrupt
+    at Object.loadEngine (/home/dantexlx/tokpas/dist/database/generated/client/runtime/index.js:36140:21)
+    at async Object.instantiateLibrary (/home/dantexlx/tokpas/dist/database/generated/client/runtime/index.js:36095:5)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:471417) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:471417) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+internal/modules/cjs/loader.js:905
+  throw err;
+  ^
+
+Error: Cannot find module 'reflect-metadata'
+Require stack:
+- /home/dantexlx/tokpas/dist/main.js
+- /usr/local/lsws/fcgi-bin/lsnode.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:902:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:746:27)
+    at Module.require (internal/modules/cjs/loader.js:974:19)
+    at require (internal/modules/cjs/helpers.js:93:18)
+    at Object.<anonymous> (/home/dantexlx/tokpas/dist/main.js:6:1)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/dantexlx/tokpas/dist/main.js',
+    '/usr/local/lsws/fcgi-bin/lsnode.js'
+  ]
+}
+(node:502690) UnhandledPromiseRejectionWarning: Error: Unable to load Node-API Library from /home/dantexlx/tokpas/dist/database/generated/client/libquery_engine-debian-openssl-1.1.x.so.node, Library may be corrupt
+    at Object.loadEngine (/home/dantexlx/tokpas/dist/database/generated/client/runtime/index.js:36140:21)
+    at async Object.instantiateLibrary (/home/dantexlx/tokpas/dist/database/generated/client/runtime/index.js:36095:5)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:502690) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:502690) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:503974) UnhandledPromiseRejectionWarning: Error: Unable to load Node-API Library from /home/dantexlx/tokpas/dist/database/generated/client/libquery_engine-debian-openssl-1.1.x.so.node, Library may be corrupt
+    at Object.loadEngine (/home/dantexlx/tokpas/dist/database/generated/client/runtime/index.js:36140:21)
+    at async Object.instantiateLibrary (/home/dantexlx/tokpas/dist/database/generated/client/runtime/index.js:36095:5)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:503974) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:503974) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:508632) UnhandledPromiseRejectionWarning: Error: Unable to load Node-API Library from /home/dantexlx/tokpas/dist/database/generated/client/libquery_engine-debian-openssl-1.1.x.so.node, Library may be corrupt
+    at Object.loadEngine (/home/dantexlx/tokpas/dist/database/generated/client/runtime/index.js:36140:21)
+    at async Object.instantiateLibrary (/home/dantexlx/tokpas/dist/database/generated/client/runtime/index.js:36095:5)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:508632) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:508632) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
